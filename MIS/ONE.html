@@ -1,0 +1,228 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+<title>测试</title><style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; bottom: 0px; top: 0px; left: 0px; right: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 40px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+  .CodeMirror-sizer { margin-left: 0px !important; }
+  .CodeMirror-gutters { display: none !important; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 2; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px !important; }
+tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-diagram-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  html.blink-to-pdf { font-size: 13px; }
+  .typora-export #write { padding-left: 32px; padding-right: 32px; padding-bottom: 0px; break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.8; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.md-inline-math .MathJax_SVG .noError { display: none !important; }
+.html-for-mac .inline-math-svg .MathJax_SVG { vertical-align: 0.2px; }
+.md-math-block .MathJax_SVG_Display { text-align: center; margin: 0px; position: relative; text-indent: 0px; max-width: none; max-height: none; min-height: 0px; min-width: 100%; width: auto; overflow-y: hidden; display: block !important; }
+.MathJax_SVG_Display, .md-inline-math .MathJax_SVG_Display { width: auto; margin: inherit; display: inline-block !important; }
+.MathJax_SVG .MJX-monospace { font-family: var(--monospace); }
+.MathJax_SVG .MJX-sans-serif { font-family: sans-serif; }
+.MathJax_SVG { display: inline; font-style: normal; font-weight: 400; line-height: normal; zoom: 90%; text-indent: 0px; text-align: left; text-transform: none; letter-spacing: normal; word-spacing: normal; overflow-wrap: normal; white-space: nowrap; float: none; direction: ltr; max-width: none; max-height: none; min-width: 0px; min-height: 0px; border: 0px; padding: 0px; margin: 0px; }
+.MathJax_SVG * { transition: none 0s ease 0s; }
+.MathJax_SVG_Display svg { vertical-align: middle !important; margin-bottom: 0px !important; margin-top: 0px !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="mermaid"] svg, [lang="flow"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+
+
+:root { --side-bar-bg-color: #fafafa; --control-text-color: #777; }
+html { font-size: 16px; }
+body { font-family: "Open Sans", "Clear Sans", "Helvetica Neue", Helvetica, Arial, sans-serif; color: rgb(51, 51, 51); line-height: 1.6; }
+#write { max-width: 860px; margin: 0px auto; padding: 30px 30px 100px; }
+#write > ul:first-child, #write > ol:first-child { margin-top: 30px; }
+a { color: rgb(65, 131, 196); }
+h1, h2, h3, h4, h5, h6 { position: relative; margin-top: 1rem; margin-bottom: 1rem; font-weight: bold; line-height: 1.4; cursor: text; }
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor { text-decoration: none; }
+h1 tt, h1 code { font-size: inherit; }
+h2 tt, h2 code { font-size: inherit; }
+h3 tt, h3 code { font-size: inherit; }
+h4 tt, h4 code { font-size: inherit; }
+h5 tt, h5 code { font-size: inherit; }
+h6 tt, h6 code { font-size: inherit; }
+h1 { padding-bottom: 0.3em; font-size: 2.25em; line-height: 1.2; border-bottom: 1px solid rgb(238, 238, 238); }
+h2 { padding-bottom: 0.3em; font-size: 1.75em; line-height: 1.225; border-bottom: 1px solid rgb(238, 238, 238); }
+h3 { font-size: 1.5em; line-height: 1.43; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1em; }
+h6 { font-size: 1em; color: rgb(119, 119, 119); }
+p, blockquote, ul, ol, dl, table { margin: 0.8em 0px; }
+li > ol, li > ul { margin: 0px; }
+hr { height: 2px; padding: 0px; margin: 16px 0px; background-color: rgb(231, 231, 231); border: 0px none; overflow: hidden; box-sizing: content-box; }
+li p.first { display: inline-block; }
+ul, ol { padding-left: 30px; }
+ul:first-child, ol:first-child { margin-top: 0px; }
+ul:last-child, ol:last-child { margin-bottom: 0px; }
+blockquote { border-left: 4px solid rgb(223, 226, 229); padding: 0px 15px; color: rgb(119, 119, 119); }
+blockquote blockquote { padding-right: 0px; }
+table { padding: 0px; word-break: initial; }
+table tr { border-top: 1px solid rgb(223, 226, 229); margin: 0px; padding: 0px; }
+table tr:nth-child(2n), thead { background-color: rgb(248, 248, 248); }
+table tr th { font-weight: bold; border-width: 1px 1px 0px; border-top-style: solid; border-right-style: solid; border-left-style: solid; border-top-color: rgb(223, 226, 229); border-right-color: rgb(223, 226, 229); border-left-color: rgb(223, 226, 229); border-image: initial; border-bottom-style: initial; border-bottom-color: initial; text-align: left; margin: 0px; padding: 6px 13px; }
+table tr td { border: 1px solid rgb(223, 226, 229); text-align: left; margin: 0px; padding: 6px 13px; }
+table tr th:first-child, table tr td:first-child { margin-top: 0px; }
+table tr th:last-child, table tr td:last-child { margin-bottom: 0px; }
+.CodeMirror-lines { padding-left: 4px; }
+.code-tooltip { box-shadow: rgba(0, 28, 36, 0.3) 0px 1px 1px 0px; border-top: 1px solid rgb(238, 242, 242); }
+.md-fences, code, tt { border: 1px solid rgb(231, 234, 237); background-color: rgb(248, 248, 248); border-radius: 3px; padding: 2px 4px 0px; font-size: 0.9em; }
+code { background-color: rgb(243, 244, 244); padding: 0px 2px; }
+.md-fences { margin-bottom: 15px; margin-top: 15px; padding-top: 8px; padding-bottom: 6px; }
+.md-task-list-item > input { margin-left: -1.3em; }
+@media print {
+  html { font-size: 13px; }
+  table, pre { break-inside: avoid; }
+  pre { overflow-wrap: break-word; }
+}
+.md-fences { background-color: rgb(248, 248, 248); }
+#write pre.md-meta-block { padding: 1rem; font-size: 85%; line-height: 1.45; background-color: rgb(247, 247, 247); border: 0px; border-radius: 3px; color: rgb(119, 119, 119); margin-top: 0px !important; }
+.mathjax-block > .code-tooltip { bottom: 0.375rem; }
+.md-mathjax-midline { background: rgb(250, 250, 250); }
+#write > h3.md-focus::before { left: -1.5625rem; top: 0.375rem; }
+#write > h4.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+#write > h5.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+#write > h6.md-focus::before { left: -1.5625rem; top: 0.285714rem; }
+.md-image > .md-meta { border-radius: 3px; padding: 2px 0px 0px 4px; font-size: 0.9em; color: inherit; }
+.md-tag { color: rgb(167, 167, 167); opacity: 1; }
+.md-toc { margin-top: 20px; padding-bottom: 20px; }
+.sidebar-tabs { border-bottom: none; }
+#typora-quick-open { border: 1px solid rgb(221, 221, 221); background-color: rgb(248, 248, 248); }
+#typora-quick-open-item { background-color: rgb(250, 250, 250); border-color: rgb(254, 254, 254) rgb(229, 229, 229) rgb(229, 229, 229) rgb(238, 238, 238); border-style: solid; border-width: 1px; }
+.on-focus-mode blockquote { border-left-color: rgba(85, 85, 85, 0.12); }
+header, .context-menu, .megamenu-content, footer { font-family: "Segoe UI", Arial, sans-serif; }
+.file-node-content:hover .file-node-icon, .file-node-content:hover .file-node-open-state { visibility: visible; }
+.mac-seamless-mode #typora-sidebar { background-color: var(--side-bar-bg-color); }
+.md-lang { color: rgb(180, 101, 77); }
+.html-for-mac .context-menu { --item-hover-bg-color: #E6F0FE; }
+#md-notification .btn { border: 0px; }
+.dropdown-menu .divider { border-color: rgb(229, 229, 229); }
+
+
+</style>
+</head>
+<body class='typora-export os-windows' >
+<div  id='write'  class = 'is-node'><h1><a name="%E7%AE%A1%E7%90%86%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F" class="md-header-anchor"></a><span>管理信息系统</span></h1><h2><a name="%E7%AC%AC%E4%B8%80%E7%AB%A0-%E7%AE%A1%E7%90%86%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%AE%BA" class="md-header-anchor"></a><span>第一章 管理信息系统概论</span></h2><h3><a name="1-%E7%AE%A1%E7%90%86%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E7%9A%84%E6%A6%82%E5%BF%B5" class="md-header-anchor"></a><span>1 管理信息系统的概念</span></h3><ul><li><p><span>企业管理工作的本质是信息处理</span></p><blockquote><p><span>企业的每一项管理工作都是借助</span><strong><span>信息处理</span></strong><span>的方式完成的，企业员工每天花大量的时间用于记录、查找、汇总和使用信息。</span></p></blockquote></li><li><p><span>计算机是信息处理的重要工具</span></p><blockquote><p><span>信息管理应用需求导致了管理信息系统的产生与发展</span></p><p><span>计算机网络及互联网提高了计算机信息管理工作的范围和系统性</span></p></blockquote></li></ul><h4><a name="%E7%AE%A1%E7%90%86%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E6%A6%82%E5%BF%B5" class="md-header-anchor"></a><span>管理信息系统概念</span></h4><p><span>管理信息系统（</span><font color="red"><strong><span>MIS</span></strong><span>，Management Information System</span></font><span>）：</span></p><p><span>是对组织进行系统化管理的</span><font color="blue"><strong><span>人机结合系统</span></strong></font><span>，它综合运用</span><font color="blue"><strong><span>计算机及其网络技术、管理和决策方法</span></strong></font><span>，融合现代化的</span><font color="blue"><strong><span>管理思想和手段</span></strong></font><span>，帮助管理人员进行信息管理和辅助决策。</span></p><ul><li><strong><span>管理信息系统与计算机技术，管理科学的关系</span></strong></li></ul><blockquote><p><strong><span>管理科学</span></strong><span>：提出新的管理方法和新的企业运行方式</span></p><p><strong><span>计算机技术</span></strong><span>：为上述管理方法提供技术手段</span></p><p><strong><span>管理信息系统</span></strong><span>：通过技术手段成为先进管理方法的载体，帮助管理人员通过信息处理的方式应用这些先进的管理方法完成管理工作。</span></p></blockquote><h4><a name="%E4%BF%A1%E6%81%AF%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F%E7%9A%84%E5%8F%91%E5%B1%95" class="md-header-anchor"></a><span>信息处理方式的发展</span></h4><ul><li><p><strong><span>电子数据处理系统</span></strong><span>（</span><font color="red"><strong><span>EDPS</span></strong><span>，Electronic Data Processing System</span></font><span>）</span></p><p><strong><span>特点</span></strong><span>：数据处理的计算机化</span></p><p><strong><span>目的</span></strong><span>：提高数据处理速度</span></p><p><span>按数据的</span><strong><span>综合程度</span></strong><span>分为：</span></p><ul><li><span>单项数据处理</span></li><li><span>综合数据处理</span></li></ul></li><li><p><strong><span>管理信息系统</span></strong><span>（</span><font color="red"><strong><span>MIS</span></strong><span>，Management Information System</span></font><span>）</span></p><p><span>是随着</span><strong><span>数据库技术</span></strong><span>和</span><strong><span>网络技术</span></strong><span>发展并成熟起来的一种企业计算机应用系统，它能系统的组织、保存、处理企业的信息，以达到辅助企业管理的目的。</span></p><p><span>从技术角度来看，管理信息系统的外在标志是应用了</span><strong><span>数据库管理系统</span></strong><span>及</span><strong><span>计算机网络技术</span></strong><span>而使系统本身具备了</span><strong><span>分布式数据处理能力</span></strong><span>，从而实现了真正意义上的</span><strong><span>企业信息管理的系统化</span></strong><span>。</span></p></li><li><p><strong><span>决策支持系统</span></strong><span>（</span><font color="red"><strong><span>DSS</span></strong><span>，Decision Support System</span></font><span>）</span></p><p><span>决策支持系统从其功能来讲是通过人和计算机交互帮助决策者探索和评价可能的方案，为管理者决策提供所需的信息，由于这类系统只能通过信息服务辅助决策者进行决策，因此称为决策支持系统。</span></p></li></ul><blockquote><p><span>DSS是MIS的重要组成部分，是MIS发展的新阶段，DSS和MIS在数据处理方式上有着本质的区别</span></p></blockquote><h3><a name="2-%E7%AE%A1%E7%90%86%E4%BF%A1%E6%81%AF%E7%B3%BB%E7%BB%9F%E7%9A%84%E4%BD%9C%E7%94%A8%E5%8F%8A%E5%85%B6%E7%BB%93%E6%9E%84" class="md-header-anchor"></a><span>2 管理信息系统的作用及其结构</span></h3><h4><a name="%E4%BD%9C%E7%94%A8" class="md-header-anchor"></a><span>作用</span></h4><ul><li><p><span>为企业准备和提供统一的信息格式。</span></p><blockquote><p><span>含义相同内容不同（北科大、北京科技大学）</span></p><p><span>含义相同结构不同（男女、1/0）</span></p></blockquote></li><li><p><span>全面系统地组织和保存企业信息。</span></p></li><li><p><span>及时、准确地提供不同要求、不同细度的信息</span></p></li></ul><h4><a name="%E7%BB%93%E6%9E%84" class="md-header-anchor"></a><span>结构</span></h4><p><span>管理信息系统的结构是指组成管理信息系统的</span><strong><span>各部件的构成框架</span></strong><span>。对部件的不同理解就产生了管理信息系统的各种结构：</span></p><ul><li><p><span>概念结构</span></p><blockquote><ul><li><span>信息源：信息产生地</span></li></ul><ul><li><span>信息处理器：负担信息的保存、处理任务</span></li></ul><ul><li><span>信息用户：信息的使用者，应用信息进行管理和决策工作</span></li></ul><ul><li><span>信息管理者：负责信息系统的设计实现，并在实现以后负责信息系统的运行和协调</span></li></ul></blockquote></li><li><p><span>功能结构</span></p><blockquote><p><span>一个管理信息系统从使用者的角度看，它总是由多种功能组成的，这些功能通过信息的使用和产生形成联系，并构成一个有机的整体，表现出系统的特征，在</span><strong><span>这个整体中功能之间的组成方式</span></strong><span>就称为管理信息系统的功能结构。</span></p></blockquote></li><li><p><span>硬件结构</span></p><blockquote><p><span>管理信息系统的硬件结构描述的是管理信息系统所依托的</span><strong><span>计算机</span></strong><span>及其</span><strong><span>网络系统的硬件设备</span></strong><span>组成及其联结方式，各硬件设备的功能和技术参数。</span></p></blockquote></li><li><p><span>软件结构</span></p><ul><li><p><span>依附于硬件结构的</span><strong><span>系统软件结构</span></strong></p><blockquote><p><span>操作系统</span></p><p><span>数据库管理系统</span></p><p><span>服务器软件</span></p><p><span>应用开发工具（包括语言：Java、C#等）</span></p></blockquote></li><li><p><span>描述MIS各应用软件功能模块的</span><strong><span>应用软件结构</span></strong></p></li></ul></li></ul><h3><a name="3-mis%E7%9A%84%E5%BC%80%E5%8F%91%E6%96%B9%E6%B3%95" class="md-header-anchor"></a><span>3 MIS的开发方法</span></h3><h4><a name="mis%E5%BC%80%E5%8F%91%E5%B7%A5%E4%BD%9C%E7%9A%84%E5%86%85%E5%AE%B9" class="md-header-anchor"></a><span>MIS开发工作的内容</span></h4><ul><li><p><span>系统规划</span></p><ul><li><span>确定MIS的目标及总体功能结构</span></li><li><span>了解企业计算机应用现状，规划MIS开发的费用及进度</span></li><li><span>从整体上研究企业管理（业务）流程的现状及存在的问题，以便在MIS的整个开发过程中解决这些问题</span></li></ul></li><li><p><span>系统分析</span></p><p><strong><span>本质</span></strong><span>：通过分析现有系统业务和数据处理要求确定新系统的</span></p><ul><li><span>逻辑功能需求</span></li><li><span>信息需求</span></li></ul><p><span>回答</span><font color="red"><strong><span>”要做什么“</span></strong></font><span>的问题，提出的是</span><font color="red"><strong><span>逻辑方案</span></strong></font></p><blockquote><p><span>管理信息系统系统分析的任务是在对现有信息系统进行详细调研的基础上，通过各种可能的方式充分描述现有系统的业务流程及所需处理的数据结构，并分析这些处理过程及数据结构的逻辑合理性，最后给出新系统的逻辑方案。</span></p></blockquote></li><li><p><span>系统设计</span></p><p><span>回答</span><font color="red"><strong><span>”怎么做“</span></strong></font><span>的问题，提出的是</span><font color="red"><strong><span>物理方案</span></strong></font></p><blockquote><p><span>系统设计的任务是依据系统分析工作得到的系统功能和信息需求通过给出新系统物理模型的方式描述如何实现在系统分析中规定的系统功能。</span></p></blockquote><p><span>工作内容：</span></p><blockquote><ul><li><span>设计新系统的处理流程及相关数据类</span></li><li><span>确定新系统的应用软件结构</span></li><li><span>设计系统的硬件结构及系统软件结构</span></li><li><span>对每一功能模块给出输入、输出及处理过程的设计</span></li></ul></blockquote></li><li><p><span>系统实施</span></p><p><span>系统实施的主要任务包括硬件设备的购置、安装，依据系统设计的要求完成每一应用模块的程序设计、组装调试、系统切换等工作。</span></p></li><li><p><span>系统运行维护与评价</span></p><p><span>系统运行维护与评价的主要工作包括新系统运行后的系统运行维护、运行管理和对新系统从目标、功能、性能及经济效益方面的评价。</span></p></li></ul><h4><a name="mis%E5%BC%80%E5%8F%91%E6%96%B9%E6%B3%95" class="md-header-anchor"></a><span>MIS开发方法</span></h4><ul><li><p><span>结构化的生命周期法</span></p><blockquote><p><span>结构化的生命周期法把管理信息系统的开发过程看作是一个包括系统规划、系统分析、系统设计、系统实施、系统运行与评价五个阶段的生命周期，强调</span><strong><span>严格区分工作阶段</span></strong><span>和</span><strong><span>工作文档的标准化</span></strong><span>。</span></p></blockquote><p><strong><span>特点</span></strong><span>：</span></p><ul><li><span>强调系统的整体性和全局性</span></li><li><span>适合大型的管理信息系统</span></li><li><span>强调严格区分开发工作的每个工作阶段</span></li><li><span>强调文档的规范化与标准化</span></li><li><span>开发周期长，与用户交流较为困难</span><strong><span>（缺）</span></strong></li></ul></li><li><p><span>快速原型法（思路与结构化生命周期法完全不同）</span></p><p><strong><span>背景</span></strong><span>：</span><strong><span>开发工具软件的不断强大、人们希望克服上述的不足</span></strong></p><blockquote><p><span>快速原型法是在初步了解用户需求之后，利用强大的开发工具软件迅速地建立一个系统原型。然后通过这个原型与用户进行交流，了解用户更详细的需求，并不断的改进这个原型，最终完成整个管理信息系统的开发工作。</span></p></blockquote><p><strong><span>特点</span></strong><span>：</span></p><ul><li><span>通过原型系统可以与用户更好的交流，获取用户的真正需求，可以让系统开发人员和使用人员较早的发现系统实现后的潜在问题。</span></li><li><span>提高了用户的参与程度，降低了系统切换（个人感觉应该是与原系统）与运行维护的难度</span></li><li><span>需要具有能够快速生成系统原型和方便修改系统原型的开发工具,需要用户参与全过程</span><strong><span>（缺）</span></strong></li><li><span>难以保证系统的全局性</span><strong><span>（缺）</span></strong></li><li><span>系统容易走上机械模拟原手工系统的轨道</span><strong><span>（缺）</span></strong></li></ul></li></ul><h3><a name="4-mis%E7%9A%84%E5%88%86%E7%B1%BB" class="md-header-anchor"></a><span>4 MIS的分类</span></h3><h4><a name="%E6%A0%B8%E5%BF%83%E4%B8%9A%E5%8A%A1%E6%B4%BB%E5%8A%A8" class="md-header-anchor"></a><span>核心业务活动</span></h4><ul><li><p><span>电子业务系统</span></p><ul><li><p><span>针对</span><strong><span>组织具体的业务过程</span></strong></p></li><li><p><span>电子化的</span><strong><span>对象</span></strong><span>是业务过程中的</span><strong><span>信息处理活动</span></strong></p></li><li><p><span>电子业务系统建设的关键是：对现有业务过程中的</span><strong><span>信息处理活动</span></strong><span>进行规划、分析、设计（优化再造）实现</span></p><blockquote><p><span>大部分企业和组织的MIS核心都属于电子业务系统。</span></p><p><span>eg：物资管理系统、产品销售系统</span></p></blockquote></li></ul></li><li><p><span>电子政务系统</span></p><ul><li><span>针对</span><strong><span>政务管理中的信息采集、统计、分析需求</span></strong><span>（不强调所有政务活动）</span></li><li><span>电子化的</span><strong><span>对象</span></strong><span>是政务活动中的</span><strong><span>信息采集、处理和传递</span></strong></li><li><span>电子业务系统建设的关键是：对现有政务活动中的信息进行分析、规范的过程</span></li></ul></li><li><p><span>电子商务系统</span></p><ul><li><span>针对</span><strong><span>商务的具体商务过程</span></strong></li><li><span>电子化的</span><strong><span>对象</span></strong><span>是商务过程中的</span><strong><span>信息处理活动</span></strong></li><li><span>电子商务系统建设的关键是：对现有商务过程中的商业模式进行分析、设计（优化再造）实现</span></li></ul></li></ul><h4><a name="%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%96%B9%E5%BC%8F" class="md-header-anchor"></a><span>数据处理方式</span></h4><ul><li><p><span>操作性管理信息系统</span></p><ul><li><span>面向：具体的管理业务</span></li><li><span>数据处理主要是对具体业务所涉及的个体数据进行采集输入、查找、修改、汇总等操作</span></li><li><span>是把具体管理业务借助计算机软、硬件实现的系统</span></li></ul></li><li><p><span>分析性管理信息系统</span></p><ul><li><span>面向：需要进行趋势分析、预测等具有分析性数据处理要求的管理、决策需求</span></li><li><span>提供对按主题组织的数据分析功能</span></li></ul></li></ul><h4><a name="mis%E6%9C%8D%E5%8A%A1%E7%9A%84%E7%BB%84%E7%BB%87%E7%9A%84%22%E7%AE%A1%E7%90%86%E5%B1%82%E6%AC%A1%22" class="md-header-anchor"></a><span>MIS服务的组织的“管理层次”</span></h4><ul><li><p><span>事务性管理信息系统</span></p><ul><li><p><span>服务于组织的基层</span></p></li><li><p><span>目的是具体业务过程的自动化</span></p><blockquote><p><span>操作性MIS大多是事务性MIS</span></p></blockquote></li></ul></li><li><p><span>管理型管理信息系统</span></p><ul><li><span>服务于组织的中层</span></li><li><span>通过查询、统计业务数据及生成报表、报告，完成所涉及的多项业务的综合管理</span></li><li><span>目的是使组织的中层管理人员通过固定格式的报表、报告和格式化的统计查询、了解、监视所涉及的管理领域的运行情况</span></li></ul></li><li><p><span>战略性管理信息系统</span></p><ul><li><span>服务于组织的高层</span></li><li><span>主题对组织积累的业务数据及可能的组织外部数据进行重新组织、存储，并利用一些分析模型对组织的战略相关问题，如经营战略制订、重大问题决策等，提供趋势性、综合性、对比性、预测性信息</span></li></ul></li></ul><h4><a name="%E5%85%B6%E4%BB%96%E5%88%86%E7%B1%BB" class="md-header-anchor"></a><span>其他分类</span></h4><ul><li><p><span>按器服务的组织的“业务职能”</span></p><blockquote><p><span>物资管理系统、产品销售管理系统、财务管理信息系统、人力资源管理系统、计划调度管理系统</span></p></blockquote></li><li><p><span>按特定的管理对象</span></p><ul><li><p><span>专业类系统</span></p></li><li><p><span>综合集成型管理系统</span></p><blockquote><p><span>视频会议系统、公文流转系统、产品数据管理系统（</span><font color="red"><strong><span>PDM</span></strong></font><span>）、客户关系管理系统（</span><font color="red"><strong><span>CRM</span></strong></font><span>）、企业资源规划系统（</span><font color="red"><strong><span>ERP</span></strong></font><span>)</span></p></blockquote></li></ul></li></ul></div>
+</body>
+</html>
